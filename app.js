@@ -1,30 +1,42 @@
-function add(x, y) {
-    const promise = new Promise((resolve, reject) =>{
+// Add JS docs (comments) to all the functions. see example below:
+/**
+ * Add
+ * @param {string} x 
+ * @param {string} y 
+ * @returns {promise}
+ */
+function add(x, y) { // x,y should num1 and num2 
+    const promise = new Promise((resolve, reject) =>{ // add space between => and {
         if(isNaN(x) || isNaN(y)) {
             reject("Invalid Input")
         }
         else {
             const sum = parseInt(x) + parseInt(y);
-            resolve(sum )
+            resolve(sum ) // remove space after sum
         }
     })
     return promise;
-}
+}// add a new line after every function
+
+/**
+ * Add Two
+ * @param {object} event 
+ */
 var addTwo = (event) => {
     event.preventDefault();
-    var x = document.getElementById('value1').value;
+    var x = document.getElementById('value1').value;  // tip: Now you can just use value1.value to get the value of an input. Also Use better Id name.
     var y = document.getElementById('value2').value;
     add(x, y)
-    .then((z) => {
-        document.getElementById('output').innerHTML = z;
+    .then((z) => { // Add tab 
+        document.getElementById('output').innerHTML = z; // this logic is repeated at multiple places. can we somehow make it reusable. 
         document.getElementById('output').className = "";
     })
     .catch((err) => {
-        document.getElementById('output').innerHTML = err;
+        document.getElementById('output').innerHTML = err; // this logic is repeated at multiple places. can we somehow make it reusable. 
         document.getElementById('output').className = "error";
     })
     .finally(() => {
-        document.getElementById('showOutput').className= "";
+        document.getElementById('showOutput').className= ""; // this logic is repeated at multiple places. can we somehow make it reusable. 
     })
 }
 function sub(x, y) {
@@ -33,7 +45,7 @@ function sub(x, y) {
             reject ('Invalid Input');
         }
         else {
-            const sub = parseInt(x) - parseInt(y)
+            const sub = parseInt(x) - parseInt(y) // missing semicolon;
             resolve(sub)
         }
     })
@@ -58,7 +70,7 @@ var subTwo = (event) => {
 }
 function multiply(x, y) {
     const promise = new Promise((resolve, reject) => {
-    if(isNaN(x) || isNaN(y) || x<0 || y<0) {
+    if(isNaN(x) || isNaN(y) || x<0 || y<0) { // add tab
         reject ('Invalid Input');
     }
     else {
@@ -87,7 +99,7 @@ var multiplyTwo = (event) => {
 }
 function divide(x, y) {
     const promise = new Promise((resolve, reject) => {
-    if(isNaN(x) || isNaN(y) || x<0 || y<0 || x==0 || y==0) {
+    if(isNaN(x) || isNaN(y) || x<0 || y<0 || x==0 || y==0) { // we only need to check if the denominator is zero
         reject ('Invalid Input');
     }
     else {
@@ -97,7 +109,7 @@ function divide(x, y) {
     })
     return promise;
 }
-var divideTwo = (event) => {
+var divideTwo = (event) => { // OPTIONAL: All these functions are basically doing the same thing. can we some how generalize them.
     event.preventDefault();
     var x = document.getElementById("value1").value;
     var y = document.getElementById("value2").value;
@@ -115,7 +127,7 @@ var divideTwo = (event) => {
     })
 }
 
-
+//remove these extra lines
 
 
 
