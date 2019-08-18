@@ -1,0 +1,19 @@
+<html>
+    <title>
+        Calculator
+    </title>
+    <body>
+        <form>
+            <input type="text" id="value1" />
+            <input type="text" id="value2" />
+            <input type="submit" onClick="addTwo(event)" value = "+"/>
+            <input type="submit" onClick="subTwo(event)" value = "-"/>
+            <input type="submit" onClick="multiplyTwo(event)" value = "*"/>
+            <input type="submit" onClick="divideTwo(event)" value = "%"/>
+        </form>
+        <span id="showOutput" class="hidden">Output: </span>
+        <span id="output" class="error"> </span>
+    </body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+</html>
